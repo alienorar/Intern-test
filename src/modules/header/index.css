@@ -1,0 +1,126 @@
+/*======= Header section====*/
+header {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation Menu */
+.header_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* Logo or Landing Text */
+header p {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #111b47;
+
+}
+
+/* Hamburger Menu Button */
+.hamburger_menu {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #111b47;
+}
+
+/* Links Section (Desktop) */
+.header_links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+
+/* For Tablets and Mobile */
+@media (max-width: 768px) {
+  .hamburger_menu {
+    display: block;
+    /* Show hamburger menu button */
+  }
+
+
+  /* Hamburger Menu Modal */
+  .hamburger_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #f8f9fa;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .hamburger_modal.open {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+
+  /* Close Button for Hamburger Menu */
+  .close_hamburger_menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    color: #111b47;
+  }
+
+  .hamburger_modal .header_links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hamburger_modal .header_links a {
+    font-size: 18px;
+    color: #111b47;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hamburger_modal .header_links a:hover {
+    color: #007bff;
+  }
+}
+
+/* For Desktop (Hide Hamburger Menu and Close Button) */
+@media (min-width: 769px) {
+  .hamburger_menu {
+    display: none;
+  }
+
+
+  .hamburger_modal .close_hamburger_menu {
+    display: none;
+  }
+
+
+  .header_links {
+    display: flex;
+    gap: 20px;
+  }
+}
