@@ -18,23 +18,23 @@ const Button: React.FC<ButtonProps> = ({
   const [isHovered, setIsHovered] = useState(false); // Track hover state
 
   const buttonStyles: React.CSSProperties = {
-    color: isHovered ? bgColor : textColor, // Change text color on hover
-    backgroundColor: isHovered ? "transparent" : bgColor, // Change bg to transparent on hover
-    border: `1px solid ${isHovered ? bgColor : borderColor}`, // Border color changes on hover
-    padding: "10px 20px",
-    fontSize: "16px",
-    borderRadius: "2px",
+    color: isHovered ? bgColor : textColor,
+    backgroundColor: isHovered ? "transparent" : bgColor, 
+    border: `1px solid ${isHovered ? bgColor : borderColor}`, 
+    padding: "clamp(8px, 2vw, 12px) clamp(12px, 3vw, 24px)", 
+    fontSize: "clamp(14px, 1.5vw, 18px)", 
+    borderRadius: "4px",
     cursor: "pointer",
-    transition: "all 0.3s ease", // Smooth transition for hover effect
+    transition: "all 0.3s ease", 
   };
 
   return (
     <button
-      className="unversal_button"
+      className="universal_button"
       style={buttonStyles}
       onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)} 
-      onMouseLeave={() => setIsHovered(false)} 
+      onMouseEnter={() => setIsHovered(true)} // Set hover state
+      onMouseLeave={() => setIsHovered(false)} // Reset hover state
     >
       {text}
     </button>

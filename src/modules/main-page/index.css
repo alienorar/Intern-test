@@ -54,6 +54,7 @@
 }
   .networking-details {
     gap: 20px;
+    text-align: center;
   }
 
   .networking-details h4 {
@@ -113,6 +114,7 @@
 
   .path-details {
     gap: 20px;
+    text-align: center;
   }
 }
 

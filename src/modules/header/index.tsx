@@ -2,29 +2,27 @@ import { NavLink } from "react-router-dom";
 import { headerLinks } from "../../router/routes";
 import { useState, useEffect } from "react";
 import { Button, Modal } from "@utils";
-import './index.css'
+import "./index.css";
 
 const Header = () => {
     const [isModalOpen, setModalOpen] = useState<boolean>(false);
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
     const [bgColor, setBgColor] = useState<string>("transparent");
+
     const handleOpenModal = () => setModalOpen(true);
     const handleCloseModal = () => setModalOpen(false);
     const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     const handleScroll = () => {
         if (window.scrollY > 50) {
-            setBgColor("#fff"); 
+            setBgColor("#fff");
         } else {
-            setBgColor("transparent"); 
+            setBgColor("transparent");
         }
     };
 
     useEffect(() => {
-        // Add scroll event listener
         window.addEventListener("scroll", handleScroll);
-
-        // Cleanup event listener on component unmount
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
@@ -32,7 +30,7 @@ const Header = () => {
 
     return (
         <header style={{ backgroundColor: bgColor }}>
-            <nav className="header_menu container">
+            <nav className="header_menu container ">
                 {/* Hamburger Menu Button */}
                 <button
                     className="hamburger_menu"

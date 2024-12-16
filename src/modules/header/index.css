@@ -4,6 +4,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease-in-out; 
 }
 
 /* Navigation Menu */
@@ -11,26 +12,33 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  padding: 10px ;
+  gap: 20px;
 }
 
 /* Logo or Landing Text */
 header p {
-  font-size: 24px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem); 
   font-weight: bold;
   font-family: sans-serif;
   color: #111b47;
-
+  margin: 0;
 }
 
 /* Hamburger Menu Button */
 .hamburger_menu {
-  font-size: 24px;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive size */
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
   color: #111b47;
+  transition: color 0.3s ease-in-out;
+}
+
+.hamburger_menu:hover,
+.hamburger_menu:focus {
+  color: #007bff;
 }
 
 /* Links Section (Desktop) */
@@ -41,14 +49,41 @@ header p {
   gap: 20px;
 }
 
+.header_links a {
+  font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive font size */
+  text-decoration: none;
+  color: #111b47;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.header_links a:hover,
+.header_links a:focus {
+  color: #007bff;
+}
+
+
+.header_menu .button {
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* Responsive font size */
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  transform: scale(1.05); /* Slight hover effect */
+}
 
 /* For Tablets and Mobile */
 @media (max-width: 768px) {
   .hamburger_menu {
     display: block;
-    /* Show hamburger menu button */
   }
-
 
   /* Hamburger Menu Modal */
   .hamburger_modal {
@@ -72,21 +107,22 @@ header p {
 
   .hamburger_modal.open {
     transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-}
+  }
 
   /* Close Button for Hamburger Menu */
   .close_hamburger_menu {
     align-self: flex-end;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     cursor: pointer;
     display: block;
     color: #111b47;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .close_hamburger_menu:hover {
+    color: #007bff;
   }
 
   .hamburger_modal .header_links {
@@ -96,7 +132,7 @@ header p {
   }
 
   .hamburger_modal .header_links a {
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive font size */
     color: #111b47;
     text-decoration: none;
     font-weight: 500;
@@ -113,11 +149,9 @@ header p {
     display: none;
   }
 
-
   .hamburger_modal .close_hamburger_menu {
     display: none;
   }
-
 
   .header_links {
     display: flex;
